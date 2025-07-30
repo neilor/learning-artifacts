@@ -134,7 +134,6 @@ function App() {
   const [completedItems, setCompletedItems] = useState({});
   const [completedDays, setCompletedDays] = useState({});
   const [completedTools, setCompletedTools] = useState({});
-  const [saveStatus, setSaveStatus] = useState("");
 
   useEffect(() => {
     const loadData = async () => {
