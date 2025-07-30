@@ -15,7 +15,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://neilorcaldeira.github.io/ai-ceo-learning-framework",
+  "homepage": "https://neilor.github.io/learning-artifacts",
   "eslintConfig": {
     "extends": [
       "react-app",
