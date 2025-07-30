@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/learning-artifacts/static/css/main.9b3ecb7e.css",
+    "main.js": "/learning-artifacts/static/js/main.989779ad.js",
+    "index.html": "/learning-artifacts/index.html",
+    "main.9b3ecb7e.css.map": "/learning-artifacts/static/css/main.9b3ecb7e.css.map",
+    "main.989779ad.js.map": "/learning-artifacts/static/js/main.989779ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b3ecb7e.css",
+    "static/js/main.989779ad.js"
+  ]
+}
