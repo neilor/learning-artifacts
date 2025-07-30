@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered CEO Learning Framework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .roles {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .role-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .learning-track {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .learning-track:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .track-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .track-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .track-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .track-subtitle {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .learning-items {
+            list-style: none;
+        }
+        
+        .learning-items li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .learning-items li:last-child {
+            border-bottom: none;
+        }
+        
+        .learning-items li::before {
+            content: "🎯";
+            margin-right: 10px;
+        }
+        
+        .progress-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .progress-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .progress-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .weekly-schedule {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .day-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        
+        .day-card:hover {
+            background: #e9ecef;
+        }
+        
+        .day-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .day-focus {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .tools-integration {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .tool-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .interactive-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI-Powered CEO Learning Framework</h1>
+            <div class="roles">
+                <div class="role-badge">👨‍💼 CEO</div>
+                <div class="role-badge">👨‍💻 Developer</div>
+                <div class="role-badge">💰 Investor</div>
+                <div class="role-badge">🚀 Startup Scaler</div>
+            </div>
+            <p>Systematic approach to mastering AI tools for technical leadership and business growth</p>
+        </div>
+
+        <div class="framework-grid">
+            <div class="learning-track">
+                <div class="track-header">
+                    <div class="track-icon">🎵</div>
+                    <div>
+                        <div class="track-title">Vibe Coding Mastery</div>
+                        <div class="track-subtitle">AI-Enhanced Development Flow</div>
+                    </div>
+                </div>
+                <ul class="learning-items">
+                    <li>Claude/Cursor integration with TypeScript/React</li>
+                    <li>AI pair programming for Node.js backends</li>
+                    <li>Automated testing with AI assistance</li>
+                    <li>Code review optimization with AI</li>
+                    <li>Documentation generation workflows</li>
+                </ul>
+            </div>
+
+            <div class="learning-track">
+                <div class="track-header">
+                    <div class="track-icon">🔧</div>
+                    <div>
+                        <div class="track-title">MCP Ecosystem</div>
+                        <div class="track-subtitle">Model Context Protocol Deep Dive</div>
+                    </div>
+                </div>
+                <ul class="learning-items">
+                    <li>MCP server setup for your tech stack</li>
+                    <li>Custom integrations with BigQuery/MongoDB</li>
+                    <li>Firebase + MCP workflows</li>
+                    <li>Google Cloud AI services connection</li>
+                    <li>Building startup-specific MCP tools</li>
+                </ul>
+            </div>
+
+            <div class="learning-track">
+                <div class="track-header">
+                    <div class="track-icon">🤖</div>
+                    <div>
+                        <div class="track-title">Multi-Agent Systems</div>
+                        <div class="track-subtitle">Orchestrated AI Workflows</div>
+                    </div>
+                </div>
+                <ul class="learning-items">
+                    <li>Agent chains for code deployment</li>
+                    <li>Business intelligence automation</li>
+                    <li>Investor report generation</li>
+                    <li>Startup assessment workflows</li>
+                    <li>Cross-platform mobile/web agents</li>
+                </ul>
+            </div>
+
+            <div class="learning-track">
+                <div class="track-header">
+                    <div class="track-icon">📱</div>
+                    <div>
+                        <div class="track-title">Personal Productivity</div>
+                        <div class="track-subtitle">CEO Operations Automation</div>
+                    </div>
+                </div>
+                <ul class="learning-items">
+                    <li>Gmail/Calendar AI management</li>
+                    <li>WhatsApp business automation</li>
+                    <li>Task prioritization algorithms</li>
+                    <li>Meeting prep & follow-up systems</li>
+                    <li>Investor communication workflows</li>
+                </ul>
+            </div>
+
+            <div class="learning-track">
+                <div class="track-header">
+                    <div class="track-icon">🛠️</div>
+                    <div>
+                        <div class="track-title">AI Product Stack</div>
+                        <div class="track-subtitle">Tool Integration & ROI</div>
+                    </div>
+                </div>
+                <ul class="learning-items">
+                    <li>CodeRabbit for PR automation</li>
+                    <li>Jules for startup operations</li>
+                    <li>Codex for rapid prototyping</li>
+                    <li>Claude for strategic planning</li>
+                    <li>Custom AI tool evaluation framework</li>
+                </ul>
+            </div>
+
+            <div class="learning-track">
+                <div class="track-header">
+                    <div class="track-icon">📊</div>
+                    <div>
+                        <div class="track-title">Data-Driven Scaling</div>
+                        <div class="track-subtitle">BI + AI for Growth</div>
+                    </div>
+                </div>
+                <ul class="learning-items">
+                    <li>Looker + AI insights automation</li>
+                    <li>BigQuery ML for startup metrics</li>
+                    <li>Predictive scaling models</li>
+                    <li>Investor dashboard automation</li>
+                    <li>Technology manager assessment AI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>🎯 Learning Progress Tracker</h2>
+            <div class="progress-grid">
+                <div class="progress-item">
+                    <div class="progress-label">Vibe Coding</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">MCP Mastery</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">Multi-Agent Systems</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">Personal Productivity</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="interactive-btn" onclick="updateProgress()">Update Progress</button>
+                <button class="interactive-btn" onclick="resetProgress()">Reset All</button>
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h2>📅 Weekly Learning Schedule</h2>
+            <p>Optimized for CEO schedule with 30-45 min focused sessions</p>
+            <div class="schedule-grid">
+                <div class="day-card">
+                    <div class="day-name">Monday</div>
+                    <div class="day-focus">Vibe Coding<br>30 min morning</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Tuesday</div>
+                    <div class="day-focus">MCP Setup<br>45 min evening</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Wednesday</div>
+                    <div class="day-focus">Multi-Agent<br>30 min morning</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Thursday</div>
+                    <div class="day-focus">Productivity<br>45 min evening</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Friday</div>
+                    <div class="day-focus">AI Products<br>30 min morning</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Saturday</div>
+                    <div class="day-focus">Data/BI<br>60 min flexible</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">Sunday</div>
+                    <div class="day-focus">Review & Plan<br>30 min reflection</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>🔗 Your Tech Stack Integration</h2>
+            <div class="tools-integration">
+                <div class="tool-card">
+                    <h3>Node.js + AI</h3>
+                    <p>Backend automation & API enhancement</p>
+                </div>
+                <div class="tool-card">
+                    <h3>React + Claude</h3>
+                    <p>Frontend development acceleration</p>
+                </div>
+                <div class="tool-card">
+                    <h3>TypeScript + AI</h3>
+                    <p>Type-safe AI-assisted development</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Firebase + MCP</h3>
+                    <p>Serverless AI-powered backends</p>
+                </div>
+                <div class="tool-card">
+                    <h3>BigQuery + ML</h3>
+                    <p>Data-driven startup insights</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Looker + AI</h3>
+                    <p>Automated business intelligence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateProgress() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const currentWidth = parseInt(bar.style.width) || 0;
+                const newWidth = Math.min(currentWidth + 20, 100);
+                bar.style.width = newWidth + '%';
+            });
+        }
+
+        function resetProgress() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                bar.style.width = '0%';
+            });
+        }
+
+        // Add click interactions to learning tracks
+        document.querySelectorAll('.learning-track').forEach(track => {
+            track.addEventListener('click', function() {
+                const items = this.querySelectorAll('.learning-items li');
+                items.forEach(item => {
+                    item.style.background = item.style.background === 'rgb(46, 204, 113)' ? '' : '#2ecc71';
+                    item.style.color = item.style.color === 'white' ? '' : 'white';
+                    item.style.borderRadius = item.style.borderRadius === '5px' ? '' : '5px';
+                    item.style.margin = item.style.margin === '2px 0' ? '' : '2px 0';
+                });
+            });
+        });
+
+        // Add hover effects to day cards
+        document.querySelectorAll('.day-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.background = this.style.background === 'rgb(52, 152, 219)' ? '#f8f9fa' : '#3498db';
+                this.style.color = this.style.color === 'white' ? '' : 'white';
+                this.style.transform = this.style.transform === 'scale(1.05)' ? '' : 'scale(1.05)';
+            });
+        });
+    </script>
+</body>
+</html>
